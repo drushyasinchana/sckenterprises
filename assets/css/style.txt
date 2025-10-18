@@ -1,0 +1,134 @@
+:root {
+  --bg: #ffffff;
+  --accent: #0b3b5a;
+  --muted: #6b7280;
+  --accent-2: #0f766e;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.wrap {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 28px;
+  max-width: 920px;
+  width: 100%;
+  border-radius: 14px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 30px rgba(11, 59, 90, 0.08);
+  border: 1px solid rgba(11, 59, 90, 0.06);
+  background: linear-gradient(180deg, #ffffff, #f6fbfb);
+}
+
+.logo {
+  flex: 0 0 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.content {
+  flex: 1;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 0.6px;
+}
+
+p.lead {
+  margin: 12px 0 18px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(15, 118, 110, 0.06);
+  color: var(--accent-2);
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.progress {
+  height: 10px;
+  background: #e6eef0;
+  border-radius: 999px;
+  margin-top: 18px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  width: 48%;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+.links {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+a.button {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(11, 59, 90, 0.08);
+  background: #fff;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+a.button.primary {
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  color: #fff;
+  border: none;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .logo {
+    flex: 0 0 auto;
+  }
+}
