@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SCK Enterprises — Website Under Construction</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="SCK Enterprises under construction">
+      <div class="logo">
+        <!-- Logo placed inside /assets/img -->
+        <img src="assets/img/logo.png" alt="SCK Enterprises logo (peacock feather with produce and tech motif)">
+      </div>
+
+      <div class="content">
+        <h1>SCK Enterprises</h1>
+        <p class="lead">
+          Technology Solutions • CCTV • Laptop & PC Service • Fruits & Vegetables Export
+        </p>
+
+        <div class="status">Website Under Construction — Launching Soon</div>
+
+        <div class="progress" aria-hidden="true">
+          <div class="bar" id="bar"></div>
+        </div>
+
+        <div class="links">
+          <a class="button" href="">Contact: </a>
+          <a class="button primary" href="#">Request a Quote</a>
+        </div>
+
+        <div class="small">
+          For urgent enquiries call: +91-90603 44838• Follow us on social media
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple progress bar animation
+    const bar = document.getElementById('bar');
+    let pct = 20;
+    function step() {
+      pct = pct + Math.floor(Math.random() * 12);
+      if (pct > 96) pct = 96;
+      bar.style.width = pct + '%';
+      if (pct < 96) setTimeout(step, 900);
+    }
+    window.addEventListener('load', () => setTimeout(step, 600));
+  </script>
+</body>
+</html>
