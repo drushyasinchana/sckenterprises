@@ -1,242 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCK Enterprises — Sri Chandan Krishna Enterprises</title>
-  <meta name="description" content="SCK Enterprises — Computer services, CCTV surveillance, IT services & agro exports. Innovating Services, Growing Futures." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta name="description" content="SCK Enterprises — Computer services, CCTV surveillance, IT services & agro exports. Innovating Services, Growing Futures.">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background-color: #fffaf0; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { background-color: #ffa94d; display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+    header .logo { display: flex; align-items: center; gap: 15px; }
+    header .logo img { height: 50px; }
+    header nav { display: flex; gap: 25px; }
+    header nav a { color: #fff; font-weight: 600; transition: color 0.3s; }
+    header nav a:hover { color: #333; }
+    .header-actions { display: flex; align-items: center; gap: 15px; }
+    .header-actions .phone { color: #fff; font-weight: 600; }
+
+    /* Mobile menu */
+    @media(max-width: 768px) {
+      header nav { display: none; flex-direction: column; background: #ffa94d; position: absolute; top: 70px; right: 30px; width: 200px; border-radius: 5px; padding: 10px 0; }
+      header nav.show { display: flex; }
+    }
+
+    /* Hero */
+    .hero { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 120px 30px 50px; }
+    .hero .hero-text { max-width: 600px; }
+    .hero h1 { font-size: 2.8rem; color: #ff6600; margin-bottom: 15px; }
+    .hero p { margin-bottom: 20px; font-size: 1.1rem; }
+    .hero .btn { padding: 10px 20px; margin-right: 10px; border-radius: 5px; font-weight: 600; transition: 0.3s; }
+    .btn-primary { background-color: #ff6600; color: #fff; border: none; }
+    .btn-primary:hover { background-color: #e55b00; }
+    .btn-secondary { background-color: #fff; color: #ff6600; border: 2px solid #ff6600; }
+    .btn-secondary:hover { background-color: #ff6600; color: #fff; }
+
+    /* Sections */
+    section { padding: 80px 30px; }
+    section.bg-light { background-color: #fff4e6; }
+    h2 { font-size: 2rem; margin-bottom: 20px; color: #ff6600; }
+    p.section-lead { font-size: 1.1rem; margin-bottom: 40px; max-width: 700px; }
+
+    /* Grid */
+    .services-grid, .about-grid, .why-grid, .contact-grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .service-card, .about-card, .why-item, .contact-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+    .service-card h3, .about-card h3, .why-item h4 { color: #ff6600; margin-bottom: 10px; }
+
+    /* Footer */
+    footer { background-color: #ffa94d; color: #fff; padding: 40px 30px 20px; }
+    footer a { color: #fff; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px; }
+    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.9rem; }
+
+    /* Responsive adjustments */
+    @media(max-width: 768px){
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { margin-top: 20px; max-width: 300px; }
+      .footer-bottom { flex-direction: column; gap: 10px; }
+    }
+  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#home">
-      <img src="assets/img/logo.png" alt="SCK Enterprises logo" class="logo-img" />
-      <div class="brand-text">
-        <div class="brand-title">SCK Enterprises</div>
-        <div class="brand-sub">Sri Chandan Krishna Enterprises</div>
-      </div>
-    </a>
-
-    <nav class="main-nav" id="main-nav">
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#why" class="nav-link">Why Us</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-
-    <div class="header-actions">
-      <a href="tel:+919060344838" class="phone">📞 9060344838</a>
-      <button class="btn btn-ghost" id="menu-toggle" aria-label="Toggle menu">☰</button>
+<header>
+  <div class="logo">
+    <img src="assets/img/logo.png" alt="SCK Enterprises Logo">
+    <div>
+      <div style="font-weight:700;">SCK Enterprises</div>
+      <div style="font-size:0.9rem;">Sri Chandan Krishna Enterprises</div>
     </div>
+  </div>
+  <nav id="main-nav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <a href="tel:+919060344838" class="phone">📞 9060344838</a>
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
   <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>SCK Enterprises</h1>
-        <p class="tagline">Innovating Services, Growing Futures.</p>
-        <p class="lead">We deliver reliable Computer Services, CCTV Surveillance, IT Services and Agro Exports — blending technology with quality agricultural trade.</p>
+    <div class="hero-text">
+      <h1>SCK Enterprises</h1>
+      <p class="tagline">Innovating Services, Growing Futures.</p>
+      <p>We deliver reliable Computer Services, CCTV Surveillance, IT Services, and Agro Exports — blending technology with quality agricultural trade.</p>
+      <a href="#services" class="btn btn-primary">Explore Services</a>
+      <a href="#contact" class="btn btn-secondary">Contact Us</a>
+    </div>
+    <img src="assets/img/logo.png" alt="SCK Logo">
+  </section>
 
-        <div class="hero-ctas">
-          <a href="#services" class="btn btn-primary">Explore Services</a>
-          <a href="#contact" class="btn btn-secondary">Contact Us</a>
-        </div>
-
-        <ul class="hero-highlights">
-          <li><strong>Address:</strong> #36 Kumbeshwara Layout, Malur Town, Kolar Dt, Karnataka - 563130</li>
-          <li><strong>GSTIN:</strong> 29ELGPK9351F2ZP</li>
-          <li><strong>Website:</strong> sckenterprises.in</li>
-        </ul>
+  <section id="services" class="bg-light">
+    <h2>Our Services</h2>
+    <p class="section-lead">End-to-end solutions across tech & agriculture.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Computer Services</h3>
+        <p>Hardware repair, networking, software installation, and system maintenance.</p>
       </div>
-
-      <div class="hero-art">
-        <div class="logo-card">
-          <img src="logo.png" alt="SCK logo" />
-        </div>
+      <div class="service-card">
+        <h3>CCTV Surveillance</h3>
+        <p>Consultation, installation, monitoring and maintenance of cameras.</p>
+      </div>
+      <div class="service-card">
+        <h3>IT Services</h3>
+        <p>Managed IT, cloud support, cybersecurity, and web solutions for SMEs.</p>
+      </div>
+      <div class="service-card">
+        <h3>Agro Exports</h3>
+        <p>Quality agricultural products exported with proper documentation and logistics.</p>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About <span class="accent">SCK Enterprises</span></h2>
-      <p class="section-lead">Sri Chandan Krishna Enterprises (SCK) is a multi-domain company offering practical technology solutions and agro exports. We serve small businesses, farms, and enterprises with dependable services tailored to each client's needs.</p>
+  <section id="about">
+    <h2>About SCK Enterprises</h2>
+    <p class="section-lead">Multi-domain company offering practical technology solutions and agro exports with reliability and professionalism.</p>
+  </section>
 
-      <div class="about-grid">
-        <div>
-          <h3>Our Mission</h3>
-          <p>To provide end-to-end solutions with focus on reliability, transparency and long-term partnerships.</p>
-
-          <h3>Core Values</h3>
-          <ul>
-            <li>Trust & Professionalism</li>
-            <li>Quality & Compliance</li>
-            <li>Customer-first approach</li>
-            <li>Continuous improvement</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-          <p><strong>Address</strong><br>
-            Sri Chandan Krishna Enterprises<br>
-            #36 Kumbeshwara Layout, Malur Town,<br>
-            Kolar Dt, Karnataka, India - 563130
-          </p>
-          <p><strong>Phone:</strong> <a href="tel:+919060344838">9060344838</a><br>
-             <strong>Email:</strong> <a href="mailto:info@sckenterprises.in">info@sckenterprises.in</a><br>
-             <strong>GSTIN:</strong> 29ELGPK9351F2ZP
-          </p>
-        </div>
-      </div>
+  <section id="why" class="bg-light">
+    <h2>Why Choose Us</h2>
+    <div class="why-grid">
+      <div class="why-item"><h4>Reliable Service</h4><p>Projects delivered on time with clear communication.</p></div>
+      <div class="why-item"><h4>Expertise</h4><p>Technology & agricultural experience for efficient solutions.</p></div>
+      <div class="why-item"><h4>Quality Assurance</h4><p>Consistent output and compliance for exports.</p></div>
+      <div class="why-item"><h4>Customer First</h4><p>Personalized solutions and after-sales support.</p></div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section bg-light">
-    <div class="container">
-      <h2>Our <span class="accent">Services</span></h2>
-      <p class="section-lead">We offer end-to-end services across tech & agriculture — designed for durability and performance.</p>
-
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="service-icon">💻</div>
-          <h3>Computer Services</h3>
-          <p>Hardware repair, networking, software installation, and system maintenance for homes and businesses.</p>
-          <ul>
-            <li>PC & Laptop repair</li>
-            <li>Network setup & troubleshooting</li>
-            <li>System maintenance & upgrades</li>
-          </ul>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">📷</div>
-          <h3>CCTV Surveillance</h3>
-          <p>End-to-end surveillance solutions: consultation, installation, monitoring and maintenance.</p>
-          <ul>
-            <li>IP & analog camera installation</li>
-            <li>Cloud & local storage solutions</li>
-            <li>24/7 monitoring options</li>
-          </ul>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">☁️</div>
-          <h3>IT Services</h3>
-          <p>Managed IT, cloud support, cybersecurity basics, and web solutions tailored for SMEs.</p>
-          <ul>
-            <li>Managed IT & support contracts</li>
-            <li>Server & cloud administration</li>
-            <li>Security audits & backups</li>
-          </ul>
-        </article>
-
-        <article class="service-card">
-          <div class="service-icon">🌾</div>
-          <h3>Agro Exports</h3>
-          <p>Quality agricultural products exported with compliance and careful supply-chain handling.</p>
-          <ul>
-            <li>Quality sourcing & packing</li>
-            <li>Export documentation</li>
-            <li>Logistics coordination</li>
-          </ul>
-        </article>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <p><strong>Address:</strong> #36 Kumbeshwara Layout, Malur Town, Kolar Dt, Karnataka - 563130</p>
+        <p><strong>Phone:</strong> <a href="tel:+919060344838">9060344838</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@sckenterprises.in">info@sckenterprises.in</a></p>
+        <p><strong>GSTIN:</strong> 29ELGPK9351F2ZP</p>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section id="why" class="section">
-    <div class="container">
-      <h2>Why <span class="accent">Choose Us</span></h2>
-      <div class="why-grid">
-        <div class="why-item">
-          <h4>Reliable Service</h4>
-          <p>Prompt response and clear communication — projects delivered on time.</p>
-        </div>
-        <div class="why-item">
-          <h4>Multi-Domain Expertise</h4>
-          <p>Technology & agricultural trade experience to bridge both worlds efficiently.</p>
-        </div>
-        <div class="why-item">
-          <h4>Quality Assurance</h4>
-          <p>Standards and checks to ensure consistent output and compliance for exports.</p>
-        </div>
-        <div class="why-item">
-          <h4>Customer First</h4>
-          <p>Personalized solutions and after-sales support to protect your investment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section bg-light">
-    <div class="container contact-grid">
-      <div class="contact-card contact-left">
-        <h3>Get in Touch</h3>
-        <p>Send us a message or call to discuss your project. We're available Monday–Saturday 9AM–6PM.</p>
-
-        <ul class="contact-list">
-          <li><strong>Address:</strong> #36 Kumbeshwara Layout, Malur Town, Kolar Dt, Karnataka 563130</li>
-          <li><strong>Phone:</strong> <a href="tel:+919060344838">9060344838</a></li>
-          <li><strong>Email:</strong> <a href="mailto:info@sckenterprises.in">info@sckenterprises.in</a></li>
-          <li><strong>GSTIN:</strong> 29ELGPK9351F2ZP</li>
-          <li><strong>Website:</strong> <a href="https://sckenterprises.in" target="_blank" rel="noopener">sckenterprises.in</a></li>
-        </ul>
-
-        <div class="socials">
-          <a href="#" aria-label="YouTube">▶ YouTube</a>
-          <a href="#" aria-label="Instagram">📷 Instagram</a>
-        </div>
-      </div>
-
-      <div class="contact-card contact-right">
-        <h3>Send a Message</h3>
-        <!-- Replace action with your Formspree endpoint or server URL -->
-        <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Full name" required>
-            <input type="email" name="email" placeholder="Email address" required>
-          </div>
-          <input type="tel" name="phone" placeholder="Phone (optional)">
-          <select name="service">
-            <option value="">Service interested in</option>
-            <option>Computer Services</option>
-            <option>CCTV Surveillance</option>
-            <option>IT Services</option>
-            <option>Agro Exports</option>
-          </select>
-          <textarea name="message" rows="5" placeholder="Describe your inquiry" required></textarea>
-
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <button type="reset" class="btn btn-ghost">Reset</button>
-          </div>
+      <div class="contact-card">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <input type="text" name="name" placeholder="Full Name" required style="width:100%; margin-bottom:10px; padding:8px;">
+          <input type="email" name="email" placeholder="Email" required style="width:100%; margin-bottom:10px; padding:8px;">
+          <input type="tel" name="phone" placeholder="Phone (optional)" style="width:100%; margin-bottom:10px; padding:8px;">
+          <textarea name="message" rows="4" placeholder="Your message" required style="width:100%; padding:8px;"></textarea>
+          <button type="submit" class="btn btn-primary" style="margin-top:10px;">Send Message</button>
         </form>
-
-        <p class="form-note">Form uses Formspree (change the action to your Formspree URL or backend endpoint).</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
+<footer>
+  <div class="footer-grid">
     <div>
-      <img src="logo.png" alt="SCK logo" class="footer-logo" />
-      <p><strong>SCK Enterprises</strong><br>Sri Chandan Krishna Enterprises</p>
-      <p>#36 Kumbeshwara Layout, Malur Town, Kolar Dt, Karnataka - 563130</p>
+      <img src="assets/img/logo.png" alt="SCK Logo" style="height:50px;">
+      <p>SCK Enterprises<br>Sri Chandan Krishna Enterprises</p>
     </div>
     <div>
       <h4>Quick Links</h4>
@@ -251,13 +181,17 @@
       <p>GSTIN: 29ELGPK9351F2ZP</p>
     </div>
   </div>
-
   <div class="footer-bottom">
-    <div>© 2025 SCK Enterprises. All rights reserved.</div>
-    <div>Website: <a href="https://sckenterprises.in" target="_blank" rel="noopener">sckenterprises.in</a></div>
+    <p>© 2025 SCK Enterprises. All rights reserved. | <a href="https://sckenterprises.in" target="_blank">sckenterprises.in</a></p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mainNav = document.getElementById('main-nav');
+  menuToggle.addEventListener('click', () => { mainNav.classList.toggle('show'); });
+</script>
+
 </body>
 </html>
